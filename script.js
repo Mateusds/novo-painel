@@ -243,3 +243,18 @@ function removerMedico() {
     if (primeiro.parentNode) primeiro.parentNode.removeChild(primeiro);
   }, 500);
 } 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const slides = [
+    document.getElementById('slide-chamadas'),
+    document.getElementById('slide-medicos'),
+    document.getElementById('slide-fila'),
+    document.getElementById('slide-avisos')
+  ];
+  let current = 0;
+  setInterval(() => {
+    slides[current].style.display = 'none';
+    current = (current + 1) % slides.length;
+    slides[current].style.display = '';
+  }, 5000);
+}); 

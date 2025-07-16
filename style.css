@@ -772,8 +772,16 @@ body {
     max-width: 98vw;
     align-items: stretch;
   }
-  .painel-direita {
-    align-items: stretch;
+  .painel-direita, .painel-esquerda {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .painel-box-carrossel.carrossel-multicards {
+    min-height: 350px;
+    padding: 0 2vw;
+  }
+  .carrossel-multicards .carrossel-slide > * {
+    padding: 18px 2vw 18px 2vw;
   }
 }
 
@@ -1042,4 +1050,80 @@ body {
   0% { box-shadow: 0 0 0 0 rgba(244,172,82,0.5); background: #f4ac52; }
   70% { box-shadow: 0 0 0 10px rgba(244,172,82,0); background: #f4ac52; }
   100% { box-shadow: 0 0 0 0 rgba(244,172,82,0); background: #f4ac52; }
+} 
+
+.painel-box-carrossel.carrossel-multicards {
+  position: relative;
+  min-width: 0;
+  /* min-height: 520px; */
+  /* height: 100%; */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0;
+}
+.carrossel-multicards .carrossel-slide {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s;
+  opacity: 1;
+  z-index: 1;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+}
+.carrossel-multicards .carrossel-slide[style*="display:none"] {
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.carrossel-multicards .carrossel-slide {
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  min-height: unset;
+  position: static;
+}
+.carrossel-multicards .carrossel-slide[style*="display: block"],
+.carrossel-multicards .carrossel-slide[style=""] {
+  display: flex !important;
+}
+.carrossel-multicards .carrossel-slide > .painel-box {
+  max-width: 600px;
+  width: 600px;
+  min-width: 600px;
+  min-height: 340px;
+  height: 340px;
+  margin: 0 auto;
+  padding: 24px 18px 24px 18px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+.carrossel-multicards .medicos-lista,
+.carrossel-multicards .fila-lista,
+.carrossel-multicards .chamadas-lista,
+.carrossel-multicards .avisos-lista {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 0;
+  padding: 0;
+}
+.carrossel-multicards .carrossel-slide > * {
+  padding: 0;
+  max-width: none;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  .carrossel-multicards .carrossel-slide > .painel-box {
+    max-width: 98vw;
+    padding: 12px 2vw 12px 2vw;
+  }
 } 

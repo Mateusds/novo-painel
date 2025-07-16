@@ -252,9 +252,26 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('slide-avisos')
   ];
   let current = 0;
+  // Garante que só o primeiro está visível ao iniciar
+  slides.forEach((slide, idx) => {
+    slide.style.display = idx === 0 ? '' : 'none';
+  });
   setInterval(() => {
-    slides[current].style.display = 'none';
-    current = (current + 1) % slides.length;
-    slides[current].style.display = '';
+    const currentSlide = slides[current];
+    // Animação de saída
+    currentSlide.classList.remove('fade-in-carrossel');
+    currentSlide.classList.add('fade-out-carrossel');
+    setTimeout(() => {
+      currentSlide.style.display = 'none';
+      currentSlide.classList.remove('fade-out-carrossel');
+      // Próximo slide
+      current = (current + 1) % slides.length;
+      const nextSlide = slides[current];
+      nextSlide.style.display = '';
+      nextSlide.classList.add('fade-in-carrossel');
+      setTimeout(() => {
+        nextSlide.classList.remove('fade-in-carrossel');
+      }, 500);
+    }, 500); // Duração do fade-out
   }, 5000);
 }); 

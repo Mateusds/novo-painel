@@ -1181,3 +1181,20 @@ body {
     gap: 64px;
   }
 } 
+
+/* Animação de fade para transição de cards do carrossel */
+@keyframes fadeInCarrossel {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeOutCarrossel {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-in-carrossel {
+  animation: fadeInCarrossel 0.5s ease;
+}
+.fade-out-carrossel {
+  animation: fadeOutCarrossel 0.5s ease;
+} 

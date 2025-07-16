@@ -1145,3 +1145,105 @@ body {
     padding: 12px 2vw 12px 2vw;
   }
 } 
+
+/* Alinha avatar e nome do paciente na mesma linha no destaque */
+.paciente-header-destaque {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.paciente-header-destaque .avatar-circulo-destaque {
+  margin-bottom: 0;
+}
+
+.paciente-header-destaque .paciente-nome-destaque {
+  margin-bottom: 0;
+} 
+
+.paciente-linha {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+} 
+
+@media (max-width: 1400px) {
+  .paciente-nome, .paciente-nome-destaque {
+    font-size: 1.5rem;
+  }
+  .avatar-circulo, .avatar-circulo-destaque {
+    width: 72px;
+    height: 72px;
+    font-size: 1.3rem;
+  }
+  .paciente-card {
+    padding: 20px 10px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .painel-main {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .painel-esquerda, .painel-direita {
+    flex: 1 1 100%;
+    gap: 16px;
+  }
+  .paciente-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 6px;
+  }
+  .paciente-nome, .paciente-nome-destaque {
+    font-size: 1.1rem;
+  }
+  .avatar-circulo, .avatar-circulo-destaque {
+    width: 56px;
+    height: 56px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .painel-header, .painel-header-destaque {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px;
+  }
+  .painel-main {
+    padding: 0 2px;
+  }
+  .paciente-card {
+    padding: 6px 2px;
+    gap: 8px;
+  }
+  .paciente-nome, .paciente-nome-destaque {
+    font-size: 0.95rem;
+  }
+  .avatar-circulo, .avatar-circulo-destaque {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 1800px) {
+  .painel-container {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  .paciente-nome, .paciente-nome-destaque {
+    font-size: 2.5rem;
+  }
+  .avatar-circulo, .avatar-circulo-destaque {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5rem;
+  }
+  .paciente-card {
+    padding: 48px 48px 48px 32px;
+    gap: 48px;
+  }
+} 

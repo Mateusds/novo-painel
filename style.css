@@ -21,7 +21,8 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   height: 100%;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 0;
   padding: 0;
 }
@@ -35,7 +36,10 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
+  max-width: 1920px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 2vw;
 }
 
 .painel-header {
@@ -1140,6 +1144,9 @@ body {
   margin: 0;
 }
 @media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
   .carrossel-multicards .carrossel-slide > .painel-box {
     max-width: 98vw;
     padding: 12px 2vw 12px 2vw;
@@ -1161,89 +1168,16 @@ body {
   margin-bottom: 0;
 } 
 
-.paciente-linha {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-} 
-
-@media (max-width: 1400px) {
-  .paciente-nome, .paciente-nome-destaque {
-    font-size: 1.5rem;
-  }
-  .avatar-circulo, .avatar-circulo-destaque {
-    width: 72px;
-    height: 72px;
-    font-size: 1.3rem;
-  }
-  .paciente-card {
-    padding: 20px 10px;
-    gap: 16px;
-  }
-}
-
-@media (max-width: 900px) {
-  .painel-main {
-    flex-direction: column;
-    gap: 16px;
-  }
-  .painel-esquerda, .painel-direita {
-    flex: 1 1 100%;
-    gap: 16px;
-  }
-  .paciente-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px 6px;
-  }
-  .paciente-nome, .paciente-nome-destaque {
-    font-size: 1.1rem;
-  }
-  .avatar-circulo, .avatar-circulo-destaque {
-    width: 56px;
-    height: 56px;
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .painel-header, .painel-header-destaque {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 8px;
-  }
-  .painel-main {
-    padding: 0 2px;
-  }
-  .paciente-card {
-    padding: 6px 2px;
-    gap: 8px;
-  }
-  .paciente-nome, .paciente-nome-destaque {
-    font-size: 0.95rem;
-  }
-  .avatar-circulo, .avatar-circulo-destaque {
-    width: 40px;
-    height: 40px;
-    font-size: 0.8rem;
-  }
-}
-
-@media (min-width: 1800px) {
+@media (min-width: 2000px) {
   .painel-container {
     max-width: 1800px;
     margin: 0 auto;
+    box-shadow: 0 0 32px 0 #0002;
+    border-radius: 24px;
   }
-  .paciente-nome, .paciente-nome-destaque {
-    font-size: 2.5rem;
-  }
-  .avatar-circulo, .avatar-circulo-destaque {
-    width: 120px;
-    height: 120px;
-    font-size: 2.5rem;
-  }
-  .paciente-card {
-    padding: 48px 48px 48px 32px;
-    gap: 48px;
+  .painel-main {
+    max-width: 1600px;
+    margin: 40px auto 0 auto;
+    gap: 64px;
   }
 } 

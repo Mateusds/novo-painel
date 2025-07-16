@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel da Clínica - HTML Puro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="painel-container">
+    <!-- Header -->
+    <header class="painel-header painel-header-destaque">
+      <div class="header-left header-left-destaque">
+        <div class="header-logo-destaque"><i class="fa-solid fa-stethoscope"></i></div>
+        <div>
+          <h1 class="header-title header-title-destaque">Mais Saúde</h1>
+          <p class="header-subtitle header-subtitle-destaque">Clínica Integrada</p>
+        </div>
+      </div>
+      <div class="header-right header-right-destaque">
+        <div class="header-time header-time-destaque" id="hora-atual">16:41:34</div>
+        <div class="header-date header-date-destaque" id="data-atual">terça-feira, 15 de julho de 2025</div>
+      </div>
+    </header>
+
+    <main class="painel-main">
+      <section class="painel-esquerda">
+        <!-- Botão de teste para chamar novo paciente -->
+        <!-- <div class="fila-teste-btns" style="margin-bottom: 18px;">
+          <button onclick="chamarNovoPaciente()">Chamar Novo Paciente (Teste)</button>
+        </div> -->
+        <!-- Paciente Atual -->
+        <div class="paciente-card paciente-card-destaque">
+          <div class="paciente-card-avatar">
+            <div class="avatar-circulo avatar-circulo-destaque">DF</div>
+            <div class="guiche-box guiche-box-destaque">
+              <div class="guiche-label">GUICHÊ</div>
+              <div class="guiche-num">20</div>
+            </div>
+            <span class="badge badge-normal badge-normal-destaque">NORMAL</span>
+          </div>
+          <div class="paciente-card-info paciente-card-info-destaque">
+            <div class="paciente-nome paciente-nome-destaque">DOUGLAS FRANCISCO MOTA DE ALMEIDA</div>
+            <div class="paciente-detalhes-grid">
+              <div class="paciente-detalhe-bloco"><i class="fa-regular fa-user"></i> Dr. Carlos Silva</div>
+              <div class="paciente-detalhe-bloco"><i class="fa-solid fa-location-dot"></i> Consultório 1</div>
+              <div class="paciente-detalhe-bloco"><i class="fa-regular fa-clock"></i> Aguardando 15 min</div>
+              <div class="paciente-detalhe-bloco"><i class="fa-regular fa-clock"></i> <span class="badge badge-chamado badge-chamado-destaque">CHAMADO</span></div>
+            </div>
+            <div class="paciente-status paciente-status-destaque">ATENDIMENTO NORMAL</div>
+          </div>
+        </div>
+
+        <!-- Fila de Espera -->
+        <div class="painel-box">
+          <div class="painel-box-header">
+            <span><i class="fa-regular fa-clock"></i> Fila de Espera</span>
+            <span class="badge badge-quantidade" id="fila-quantidade">3 pacientes</span>
+          </div>
+          <div class="fila-teste-btns">
+            <button onclick="adicionarPacienteFila()">Adicionar Paciente</button>
+            <button onclick="removerPacienteFila()">Remover Paciente</button>
+          </div>
+          <div class="fila-lista" id="fila-lista">
+            <div class="fila-item prioridade" id="paciente-1">
+              <div class="avatar-fila" style="background: linear-gradient(135deg, var(--accent), var(--accent-dark));">MS</div>
+              <div class="fila-info">
+                <div class="fila-nome">MARIA SANTOS OLIVEIRA <i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="fila-detalhes">#21 · Dr. Silva · Consultório 1 · 5 min</div>
+              </div>
+              <span class="badge badge-prioridade">PRIORIDADE</span>
+              <span class="fila-pos">Posição: 1</span>
+            </div>
+            <div class="fila-item normal" id="paciente-2">
+              <div class="avatar-fila" style="background: linear-gradient(135deg, var(--primary), var(--accent));">JC</div>
+              <div class="fila-info">
+                <div class="fila-nome">JOÃO CARLOS FERREIRA</div>
+                <div class="fila-detalhes">#22 · Dr. Costa · Consultório 2 · 8 min</div>
+              </div>
+              <span class="badge badge-normal">NORMAL</span>
+              <span class="fila-pos">Posição: 2</span>
+            </div>
+            <div class="fila-item retorno" id="paciente-3">
+              <div class="avatar-fila" style="background: linear-gradient(135deg, var(--accent), var(--muted));">AB</div>
+              <div class="fila-info">
+                <div class="fila-nome">ANA BEATRIZ ROCHA</div>
+                <div class="fila-detalhes">#23 · Dr. Silva · Consultório 1 · 12 min</div>
+              </div>
+              <span class="badge badge-retorno">RETORNO</span>
+              <span class="fila-pos">Posição: 3</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Status dos Médicos -->
+        <div class="painel-box">
+          <div class="painel-box-header">
+            <span><i class="fa-solid fa-user-doctor"></i> Status dos Médicos</span>
+          </div>
+          <div class="medicos-teste-btns">
+            <button onclick="adicionarMedico()">Adicionar Médico</button>
+            <button onclick="removerMedico()">Remover Médico</button>
+          </div>
+          <div class="medicos-lista" id="medicos-lista">
+            <div class="medico-item ocupado" id="medico-1">
+              <div class="avatar-medico" style="background: linear-gradient(135deg, var(--accent), var(--accent-dark));">DS</div>
+              <div class="medico-info">
+                <div class="medico-nome">Dr. Silva <i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div class="medico-detalhes">Clínico Geral · Consultório 1</div>
+                <div class="medico-atendendo">Atendendo: Douglas Francisco</div>
+                <div class="medico-proximo">Próxima: Maria Santos</div>
+              </div>
+              <span class="badge badge-ocupado">OCUPADO</span>
+              <span class="medico-status"><i class="fa-regular fa-clock"></i> Em atendimento</span>
+            </div>
+            <div class="medico-item disponivel" id="medico-2">
+              <div class="avatar-medico" style="background: linear-gradient(135deg, var(--primary), var(--accent));">DC</div>
+              <div class="medico-info">
+                <div class="medico-nome">Dr. Costa <i class="fa-regular fa-circle-check"></i></div>
+                <div class="medico-detalhes">Cardiologista · Consultório 2</div>
+                <div class="medico-proximo">Próximo: João Carlos</div>
+              </div>
+              <span class="badge badge-disponivel">DISPONÍVEL</span>
+            </div>
+            <div class="medico-item intervalo" id="medico-3">
+              <div class="avatar-medico" style="background: linear-gradient(135deg, var(--muted), #fff);">DA</div>
+              <div class="medico-info">
+                <div class="medico-nome">Dra. Andrade <i class="fa-solid fa-mug-saucer"></i></div>
+                <div class="medico-detalhes">Pediatra · Consultório 3</div>
+              </div>
+              <span class="badge badge-intervalo">INTERVALO</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="painel-direita">
+        <!-- Últimas Chamadas -->
+        <div class="painel-box painel-box-chamadas">
+          <div class="painel-box-header painel-box-header-chamadas">
+            <span><i class="fa-solid fa-phone"></i> Últimas Chamadas</span>
+          </div>
+          <div class="chamadas-lista chamadas-lista-destaque">
+            <div class="chamada-item chamada-item-destaque">
+              <div class="chamada-info">
+                <div class="chamada-nome chamada-nome-destaque">DOUGLAS FRANCISCO MOTA DE ALMEIDA</div>
+                <div class="chamada-guiche"><span class="chamada-guiche-label">GUICHÊ:</span> 50</div>
+              </div>
+              <span class="badge badge-normal badge-normal-chamada">ATENDIMENTO NORMAL</span>
+            </div>
+            <div class="chamada-item chamada-item-destaque">
+              <div class="chamada-info">
+                <div class="chamada-nome chamada-nome-destaque">CLIENTE SMILE</div>
+                <div class="chamada-guiche"><span class="chamada-guiche-label">GUICHÊ:</span> 50</div>
+              </div>
+              <span class="badge badge-normal badge-normal-chamada">ATENDIMENTO NORMAL</span>
+            </div>
+            <div class="chamada-item chamada-item-destaque">
+              <div class="chamada-info">
+                <div class="chamada-nome chamada-nome-destaque">MARIA SANTOS OLIVEIRA</div>
+                <div class="chamada-guiche"><span class="chamada-guiche-label">GUICHÊ:</span> 21</div>
+              </div>
+              <span class="badge badge-prioridade badge-normal-chamada">PRIORIDADE</span>
+            </div>
+            <div class="chamada-item chamada-item-destaque">
+              <div class="chamada-info">
+                <div class="chamada-nome chamada-nome-destaque">ANA BEATRIZ ROCHA</div>
+                <div class="chamada-guiche"><span class="chamada-guiche-label">GUICHÊ:</span> 23</div>
+              </div>
+              <span class="badge badge-retorno badge-normal-chamada">RETORNO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Avisos e Comunicados -->
+        <div class="painel-box">
+          <div class="painel-box-header">
+            <span><i class="fa-solid fa-bullhorn"></i> Avisos e Comunicados</span>
+          </div>
+          <div class="avisos-teste-btns">
+            <button onclick="adicionarAviso()">Adicionar Aviso</button>
+            <button onclick="removerAviso()">Remover Aviso</button>
+          </div>
+          <div class="avisos-lista" id="avisos-lista">
+            <div class="aviso-item urgente" id="aviso-1">
+              <div class="aviso-topo">
+                <span class="aviso-titulo"><i class="fa-solid fa-circle-exclamation"></i> Atraso no Atendimento</span>
+                <span class="badge badge-urgente">URGENTE</span>
+              </div>
+              <div class="aviso-msg">Dr. Silva apresentará 15 minutos de atraso devido emergência.</div>
+              <div class="aviso-hora"><i class="fa-regular fa-clock"></i> 14:30</div>
+            </div>
+            <div class="aviso-item info" id="aviso-2">
+              <div class="aviso-topo">
+                <span class="aviso-titulo"><i class="fa-solid fa-circle-info"></i> Novo Protocolo</span>
+                <span class="badge badge-info">INFO</span>
+              </div>
+              <div class="aviso-msg">Lembramos que é obrigatório o uso de máscara em todas as dependências.</div>
+              <div class="aviso-hora"><i class="fa-regular fa-clock"></i> 13:45</div>
+            </div>
+            <div class="aviso-item atencao" id="aviso-3">
+              <div class="aviso-topo">
+                <span class="aviso-titulo"><i class="fa-solid fa-triangle-exclamation"></i> Manutenção</span>
+                <span class="badge badge-atencao">ATENÇÃO</span>
+              </div>
+              <div class="aviso-msg">Elevador em manutenção. Utilizem as escadas.</div>
+              <div class="aviso-hora"><i class="fa-regular fa-clock"></i> 12:20</div>
+            </div>
+           
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,1044 @@
+:root {
+  --primary: #545554;
+  --accent: #F4AC52;
+  --accent-dark: #E88C38;
+  --background: #181818;
+  --foreground: #fff;
+  --muted: #888;
+  --success: #4BB543;
+  --warning: #F4AC52;
+  --destructive: #E53935;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Outros estilos serão adicionados conforme a estrutura visual for portada */ 
+
+.painel-container {
+  min-height: 100vh;
+  height: 100vh;
+  background: #f7f7fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.painel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 40px 24px 40px;
+  border-bottom: none;
+  background: none;
+  flex-shrink: 0;
+}
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.header-icon {
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #fff;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 #0001;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 0;
+}
+.header-subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin: 0;
+}
+.header-right {
+  text-align: right;
+}
+.header-time {
+  color: var(--accent-dark);
+  font-size: 1.5rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-weight: bold;
+}
+.header-date {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.painel-main {
+  flex: 1 1 0;
+  display: flex;
+  gap: 32px;
+  /* max-width: 1300px; */
+  margin: 32px 10px 10px 10px;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+.painel-esquerda {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.painel-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: stretch;
+}
+.painel-box-chamadas {
+  margin-top: 0 !important;
+  align-self: stretch;
+}
+
+.paciente-card {
+  display: flex;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 #0001;
+  padding: 32px 32px 32px 24px;
+  gap: 32px;
+  align-items: center;
+}
+.paciente-card-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.avatar-circulo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--primary);
+  box-shadow: 0 2px 12px 0 #0001;
+}
+.guiche-box {
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  border-radius: 16px;
+  padding: 8px 18px;
+  margin-top: 8px;
+  margin-bottom: 4px;
+  box-shadow: 0 2px 8px 0 #0001;
+  text-align: center;
+}
+.guiche-label {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.guiche-num {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.paciente-card-info {
+  flex: 1;
+  text-align: left;
+}
+.paciente-nome {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+.paciente-detalhes {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  color: var(--primary);
+  font-size: 1.1rem;
+  align-items: center;
+}
+.paciente-detalhes i {
+  margin-right: 6px;
+  color: var(--accent-dark);
+}
+.paciente-status {
+  color: var(--accent-dark);
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.painel-box {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 #0001;
+  padding: 24px 24px 18px 24px;
+  margin-bottom: 0;
+}
+.painel-box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 18px;
+  gap: 12px;
+}
+.painel-box-header i {
+  color: var(--accent-dark);
+  margin-right: 8px;
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 4px 14px;
+  margin-left: 6px;
+  margin-right: 0;
+  background: #eee;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+.badge-normal {
+  background: var(--primary);
+  color: #fff;
+}
+.badge-prioridade {
+  background: var(--destructive);
+  color: #fff;
+  animation: pulseUrgente 1.2s infinite;
+}
+.badge-retorno {
+  background: var(--warning);
+  color: #fff;
+}
+.badge-chamado {
+  background: var(--accent);
+  color: #fff;
+  font-weight: bold;
+}
+.badge-quantidade {
+  background: var(--muted);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 2px 10px;
+}
+.badge-ocupado {
+  background: var(--warning);
+  color: #fff;
+}
+.badge-disponivel {
+  background: var(--success);
+  color: #fff;
+}
+.badge-intervalo {
+  background: var(--muted);
+  color: #fff;
+}
+.badge-urgente {
+  background: var(--destructive);
+  color: #fff;
+}
+.badge-info {
+  background: #2EAADC;
+  color: #fff;
+}
+.badge-atencao {
+  background: var(--warning);
+  color: #fff;
+}
+
+.fila-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.fila-item {
+  display: flex;
+  align-items: center;
+  background: #f9f9fb;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 1px 4px 0 #0001;
+  gap: 18px;
+  border-left: 6px solid var(--primary);
+  position: relative;
+}
+.fila-item.prioridade {
+  border-left: 6px solid var(--destructive);
+  background: #fff0f0;
+}
+.fila-item.normal {
+  border-left: 6px solid var(--primary);
+}
+.fila-item.retorno {
+  border-left: 6px solid var(--warning);
+  background: #fff8e1;
+}
+.avatar-fila {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px 0 #0001;
+}
+.fila-info {
+  flex: 1;
+}
+.fila-nome {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.fila-nome i {
+  color: var(--destructive);
+  font-size: 1rem;
+}
+.fila-detalhes {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-top: 2px;
+}
+.fila-pos {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-left: 10px;
+}
+
+.medicos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.medico-item {
+  display: flex;
+  align-items: center;
+  background: #f9f9fb;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 1px 4px 0 #0001;
+  gap: 18px;
+  border-left: 6px solid var(--primary);
+  position: relative;
+}
+.medico-item.ocupado {
+  border-left: 6px solid var(--warning);
+  background: #fff8e1;
+}
+.medico-item.disponivel {
+  border-left: 6px solid var(--success);
+  background: #e8fbe8;
+}
+.medico-item.intervalo {
+  border-left: 6px solid var(--muted);
+  background: #f3f3f3;
+}
+.avatar-medico {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px 0 #0001;
+}
+.medico-info {
+  flex: 1;
+}
+.medico-nome {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.medico-nome i {
+  color: var(--warning);
+  font-size: 1rem;
+}
+.medico-detalhes {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-top: 2px;
+}
+.medico-atendendo {
+  color: var(--primary);
+  font-size: 0.98rem;
+  margin-top: 2px;
+}
+.medico-proximo {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-top: 2px;
+}
+.medico-status {
+  color: var(--warning);
+  font-size: 0.95rem;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chamadas-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.chamada-item {
+  background: #f9f9fb;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 4px 0 #0001;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: space-between;
+}
+.chamada-nome {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+.chamada-detalhes {
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.avisos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.aviso-item {
+  background: #f9f9fb;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 4px 0 #0001;
+  margin-bottom: 0;
+}
+.aviso-item.urgente {
+  border-left: 6px solid var(--destructive);
+  background: #fff0f0;
+}
+.aviso-item.info {
+  border-left: 6px solid #2EAADC;
+  background: #e3f0ff;
+}
+.aviso-item.atencao {
+  border-left: 6px solid var(--warning);
+  background: #fff8e1;
+}
+.aviso-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.aviso-titulo {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.aviso-titulo i {
+  font-size: 1rem;
+}
+.aviso-msg {
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-bottom: 4px;
+}
+.aviso-hora {
+  color: var(--muted);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.aviso-emergencia {
+  background: #e3f0ff;
+  border: 1px solid #b3d4fc;
+  border-radius: 10px;
+  padding: 12px 0 10px 0;
+  text-align: center;
+  margin-top: 10px;
+}
+.emergencia-titulo {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.emergencia-fone {
+  color: var(--primary);
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.emergencia-info {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.paciente-card-destaque {
+  box-shadow: 0 4px 32px 0 #0001;
+  border-radius: 18px;
+  padding: 32px 32px 32px 24px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.avatar-circulo-destaque {
+  background: linear-gradient(135deg, #3db0e7 0%, #f4ac52 100%);
+  border: 4px solid #3db0e7;
+  color: #fff;
+  font-size: 2rem;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 12px 0 #0001;
+}
+.guiche-box-destaque {
+  background: linear-gradient(135deg, #f4ac52 0%, #e88c38 100%);
+  border-radius: 12px;
+  padding: 10px 22px;
+  margin-bottom: 8px;
+  margin-top: 0;
+  box-shadow: 0 2px 8px 0 #0001;
+}
+.guiche-label {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.guiche-num {
+  color: #fff;
+  font-size: 2.1rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+.badge-normal-destaque {
+  background: #3db0e7;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 2px;
+  margin-bottom: 0;
+  padding: 4px 16px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+}
+.paciente-card-info-destaque {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+}
+.paciente-nome-destaque {
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #222c32;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+.paciente-detalhes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 24px;
+  width: 100%;
+  margin-bottom: 0;
+}
+.paciente-detalhe-bloco {
+  background: #f6fafd;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  color: #3b4a54;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px 0 #0001;
+}
+.paciente-detalhe-bloco i {
+  color: #3db0e7;
+  font-size: 1.2rem;
+  margin-right: 6px;
+}
+.badge-chamado-destaque {
+  background: #f4ac52;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 4px 14px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  animation: pulseChamado 1.2s infinite;
+}
+.paciente-status-destaque {
+  color: #3db0e7;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-top: 18px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 0 #fff8;
+  text-align: center;
+}
+
+.painel-header-destaque {
+  background: #f7f7fa;
+  box-shadow: none;
+  padding: 0 36px 0 36px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  border-radius: 0;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.header-left-destaque {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.header-logo-destaque {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #3db0e7 0%, #f4ac52 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  box-shadow: 0 2px 8px 0 #0001;
+  margin-right: 10px;
+}
+.header-title-destaque {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #222c32;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+.header-subtitle-destaque {
+  color: #7a8a99;
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+.header-right-destaque {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+}
+.header-time-destaque {
+  color: #3db0e7;
+  font-size: 2rem;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+.header-date-destaque {
+  color: #7a8a99;
+  font-size: 1.05rem;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.painel-box-chamadas {
+  min-height: 400px; /* ajuste conforme necessário */
+  /* height: 100%;  (opcional, se quiser ocupar todo o espaço disponível) */
+}
+.painel-box-header-chamadas {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #222c32;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+.painel-box-header-chamadas i {
+  color: #f4ac52;
+  margin-right: 7px;
+}
+.chamadas-lista-destaque {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.chamada-item-destaque {
+  background: #f6fafd;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0;
+  gap: 18px;
+}
+.chamada-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.chamada-nome-destaque {
+  font-weight: 700;
+  color: #222c32;
+  font-size: 0.875rem;
+  margin-bottom: 2px;
+}
+.chamada-guiche {
+  color: #3db0e7;
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+.chamada-guiche-label {
+  color: #7a8a99;
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin-right: 2px;
+}
+.badge-normal-chamada {
+  background: #eaf6fb;
+  color: #222c32;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 4px 14px;
+  letter-spacing: 0.5px;
+  box-shadow: none;
+}
+.badge-prioridade.badge-normal-chamada {
+  color: #fff !important;
+}
+
+@media (max-width: 1100px) {
+  .painel-main {
+    flex-direction: column;
+    gap: 24px;
+    max-width: 98vw;
+    align-items: stretch;
+  }
+  .painel-direita {
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 800px) {
+  .painel-header {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 16px 18px 16px;
+  }
+  .painel-main {
+    flex-direction: column;
+    gap: 18px;
+    padding: 0 8px;
+  }
+  .painel-esquerda, .painel-direita {
+    gap: 18px;
+    padding: 0;
+  }
+  .paciente-card {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 8px 18px 8px;
+  }
+} 
+
+@media (max-width: 900px) {
+  .paciente-card-destaque {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 8px 18px 8px;
+  }
+  .paciente-nome-destaque {
+    font-size: 2rem;
+  }
+  .paciente-status-destaque {
+    font-size: 1.3rem;
+  }
+  .paciente-detalhes-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .painel-header-destaque {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 0 10px 0 10px;
+  }
+  .header-right-destaque {
+    align-items: flex-start;
+    text-align: left;
+  }
+} 
+
+@media (min-width: 1600px) {
+  .painel-container {
+    max-width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+  }
+  .painel-header-destaque {
+    max-width: 100vw;
+    padding: 0 80px;
+    min-height: 110px;
+  }
+  .painel-main {
+    max-width: 1800px;
+    margin: 40px auto 0 auto;
+    gap: 48px;
+  }
+  .paciente-card-destaque {
+    padding: 48px 64px 48px 48px;
+    gap: 64px;
+  }
+  .avatar-circulo-destaque {
+    width: 140px;
+    height: 140px;
+    font-size: 3rem;
+  }
+  .guiche-box-destaque {
+    padding: 18px 38px;
+    font-size: 1.3rem;
+  }
+  .badge-normal-destaque, .badge-normal-chamada {
+    font-size: 1.3rem;
+    padding: 8px 28px;
+  }
+  .paciente-nome-destaque {
+    font-size: 3.5rem;
+  }
+  .paciente-status-destaque {
+    font-size: 2.6rem;
+  }
+  .paciente-detalhes-grid {
+    gap: 28px 40px;
+    font-size: 1.5rem;
+  }
+  .painel-box, .painel-box-chamadas {
+    font-size: 1.3rem;
+    padding: 38px 38px 28px 38px;
+  }
+  .fila-item, .medico-item, .chamada-item-destaque {
+    font-size: 1.2rem;
+    padding: 24px 32px;
+  }
+  .badge-chamado-destaque {
+    font-size: 1.3rem;
+    padding: 8px 22px;
+  }
+  .header-title-destaque {
+    font-size: 2.8rem;
+  }
+  .header-subtitle-destaque {
+    font-size: 1.5rem;
+  }
+  .header-time-destaque {
+    font-size: 2.8rem;
+  }
+  .header-date-destaque {
+    font-size: 1.5rem;
+  }
+} 
+
+/* Animação de entrada (da esquerda para o centro) */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animação de saída (do centro para a direita) */
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+}
+
+.fila-item.anim-enter {
+  animation: slideInLeft 0.5s cubic-bezier(.4,1.4,.6,1) forwards;
+}
+
+.fila-item.anim-exit {
+  animation: slideOutRight 0.5s cubic-bezier(.4,1.4,.6,1) forwards;
+}
+
+.fila-teste-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.fila-teste-btns button {
+  background: #3db0e7;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.fila-teste-btns button:hover {
+  background: #2286c3;
+} 
+
+/* Animação de entrada e saída para avisos */
+.aviso-item.anim-enter {
+  animation: slideInLeft 0.5s cubic-bezier(.4,1.4,.6,1) forwards;
+}
+.aviso-item.anim-exit {
+  animation: slideOutRight 0.5s cubic-bezier(.4,1.4,.6,1) forwards;
+}
+
+.avisos-teste-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.avisos-teste-btns button {
+  background: #f4ac52;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.avisos-teste-btns button:hover {
+  background: #e88c38;
+} 
+
+@keyframes pulseUrgente {
+  0% { box-shadow: 0 0 0 0 rgba(229,57,53,0.5); background: var(--destructive); }
+  70% { box-shadow: 0 0 0 10px rgba(229,57,53,0); background: var(--destructive); }
+  100% { box-shadow: 0 0 0 0 rgba(229,57,53,0); background: var(--destructive); }
+}
+
+.badge-urgente {
+  animation: pulseUrgente 1.2s infinite;
+} 
+
+@keyframes pulsePacienteFundo {
+  0%   { background: #fffbe6; }
+  16%  { background: #ffe0a3; }
+  33%  { background: #fffbe6; }
+  50%  { background: #ffe0a3; }
+  66%  { background: #fffbe6; }
+  83%  { background: #ffe0a3; }
+  100% { background: inherit; }
+}
+
+.paciente-card-destaque.paciente-pulse {
+  animation: pulsePacienteFundo 3s ease;
+} 
+
+.medicos-teste-btns {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.medicos-teste-btns button {
+  background: #4BB543;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.medicos-teste-btns button:hover {
+  background: #388e3c;
+}
+
+.medico-item.anim-enter {
+  animation: slideInLeft 0.5s cubic-bezier(.4,1.4,.6,1) forwards;
+}
+.medico-item.anim-exit {
+  animation: slideOutRight 0.5s cubic-bezier(.4,1.4,.6,1) forwards;
+} 
+
+.guiche-badge-container {
+  display: flex;
+  align-items: center;
+  gap: 14px; /* Espaço entre guichê e badge */
+}
+.guiche-box-destaque,
+.badge-normal-destaque {
+  margin-top: 0;
+  margin-bottom: 0;
+} 
+
+@keyframes pulseChamado {
+  0% { box-shadow: 0 0 0 0 rgba(244,172,82,0.5); background: #f4ac52; }
+  70% { box-shadow: 0 0 0 10px rgba(244,172,82,0); background: #f4ac52; }
+  100% { box-shadow: 0 0 0 0 rgba(244,172,82,0); background: #f4ac52; }
+} 

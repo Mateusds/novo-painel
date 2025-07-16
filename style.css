@@ -862,6 +862,7 @@ body {
   .paciente-card-destaque {
     padding: 48px 64px 48px 48px;
     gap: 64px;
+    min-height: 480px !important;
   }
   .avatar-circulo-destaque {
     width: 140px;
@@ -886,9 +887,19 @@ body {
     gap: 28px 40px;
     font-size: 1.5rem;
   }
-  .painel-box, .painel-box-chamadas {
-    font-size: 1.3rem;
-    padding: 38px 38px 28px 38px;
+  .painel-box,
+  .painel-box-carrossel,
+  .carrossel-multicards {
+    min-height: 480px !important;
+    /* já possuem padding, não sobrescrever */
+  }
+  .carrossel-multicards #slide-chamadas,
+  .carrossel-multicards #slide-medicos,
+  .carrossel-multicards #slide-fila,
+  .carrossel-multicards #slide-avisos {
+    min-height: 480px !important;
+    box-sizing: border-box;
+    /* herdando padding do pai, se necessário ajuste aqui */
   }
   .fila-item, .medico-item, .chamada-item-destaque {
     font-size: 1.2rem;

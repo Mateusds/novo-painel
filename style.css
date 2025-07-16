@@ -650,13 +650,13 @@ body {
   width: 56px;
   height: 56px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #3db0e7 0%, #f4ac52 100%);
+  /* background: linear-gradient(135deg, #3db0e7 0%, #f4ac52 100%); */
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
   color: #fff;
-  box-shadow: 0 2px 8px 0 #0001;
+  /* box-shadow: 0 2px 8px 0 #0001; */
   margin-right: 10px;
 }
 .header-title-destaque {

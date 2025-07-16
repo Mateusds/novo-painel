@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding-top: 30px;
+  
 }
 
 .painel-header {
@@ -831,7 +831,7 @@ body {
   .painel-container {
     max-width: 100vw;
     min-height: 100vh;
-    padding: 0;
+    padding-top: 30px;
   }
   .painel-header-destaque {
     max-width: 100vw;
